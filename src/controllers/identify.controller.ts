@@ -1,4 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
+import { identifyContact } from '../services/contact.service';
 import { logger } from '../utils/logger';
 
 export async function identifyController(req: Request, res: Response, next: NextFunction): Promise<void> {
@@ -7,15 +8,9 @@ export async function identifyController(req: Request, res: Response, next: Next
 
         logger.debug('Identify request received', { email, phoneNumber });
 
-        // Service will be wired in Part 3
-        res.status(200).json({
-            contact: {
-                primaryContatctId: 0,
-                emails: [],
-                phoneNumbers: [],
-                secondaryContactIds: [],
-            },
-        });
+        const result = await identifyContact(email, phoneNumber);
+
+        res.status(200).json(result);
     } catch (error) {
         next(error);
     }

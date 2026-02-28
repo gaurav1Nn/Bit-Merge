@@ -1,9 +1,7 @@
-import { PrismaClient } from '@prisma/client';
 import app from './app';
 import { config } from './config';
 import { logger } from './utils/logger';
-
-const prisma = new PrismaClient();
+import { prisma } from './services/contact.service';
 
 const server = app.listen(config.port, () => {
     logger.info(`Server running on port ${config.port}`, { env: config.nodeEnv });
