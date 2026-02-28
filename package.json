@@ -1,0 +1,48 @@
+{
+  "name": "bitespeed-identity",
+  "version": "1.0.0",
+  "description": "Bitespeed Identity Reconciliation Service — links customer contacts across multiple purchases",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "nodemon --exec tsx src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "dotenv -e .env.test -- jest --runInBand --forceExit",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:generate": "prisma generate",
+    "prisma:studio": "prisma studio"
+  },
+  "keywords": [
+    "bitespeed",
+    "identity",
+    "reconciliation",
+    "contacts"
+  ],
+  "author": "Gaurav",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "connect-timeout": "^1.9.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "helmet": "^8.1.0",
+    "morgan": "^1.10.1"
+  },
+  "devDependencies": {
+    "@types/connect-timeout": "^1.9.0",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/jest": "^30.0.0",
+    "@types/morgan": "^1.9.10",
+    "@types/supertest": "^7.2.0",
+    "dotenv-cli": "^11.0.0",
+    "jest": "^30.2.0",
+    "nodemon": "^3.1.14",
+    "prisma": "^5.22.0",
+    "supertest": "^7.2.2",
+    "ts-jest": "^29.4.6",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
