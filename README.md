@@ -4,7 +4,7 @@ A production-grade backend service that identifies and consolidates customer con
 
 Built as part of the [Bitespeed Backend Task](https://bitespeed.io).
 
-**🌐 Live Endpoint:** `<YOUR_RENDER_URL>/identify`
+**🌐 Live Endpoint:** `https://bit-merge.onrender.com/identify`
 
 ---
 
